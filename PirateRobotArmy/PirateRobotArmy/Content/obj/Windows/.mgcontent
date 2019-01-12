@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Robot_Base.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Robot_Engine.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Robot_Gun.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Robot_Shield.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Bars.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Circle.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Colision.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Cross.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Cube.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Marshmellow.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/Insignias/Stripe.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/ArenaCenter.png</File>
+    <File>D:/Users/Nathan/Documents/VSProjects/PirateRobotArmy/PirateRobotArmy/Content/ArenaRing.png</File>
+  </SourceFiles>
+</SourceFileCollection>

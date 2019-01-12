@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rules>
+  <RuleSet name="default">
+    <MaxMoveSpeed>.1</MaxMoveSpeed>
+    <Friction>0.02</Friction>
+    <AccelPerPower>.02</AccelPerPower>
+    
+    <MaxRange>40</MaxRange>
+    <MinimumAccuracy>1</MinimumAccuracy>
+    <MaximumAccuracy>0.01</MaximumAccuracy>
+    
+    <MovementAccuracyDegrade>.2</MovementAccuracyDegrade>
+    <AimAccuracyDegrade>.02</AimAccuracyDegrade>
+    
+    <ShootAccuracyDegrade>.1</ShootAccuracyDegrade>
+    <AimImprovementPerTick>.01</AimImprovementPerTick>
+    
+    <MaxStoredBullets>5</MaxStoredBullets>
+    <ReloadPerPower>.003</ReloadPerPower>
+    
+    <MaxShield>15</MaxShield>
+    <ShieldPerPower>.001</ShieldPerPower>
+    
+    <ViewRange>50</ViewRange>
+    <SpawnDistance>50</SpawnDistance>
+    <SpawnRadius>10</SpawnRadius>
+    <ArenaRadius>60</ArenaRadius>
+    
+    <TotalBots>5</TotalBots>
+    
+    <MaxPower>12</MaxPower>
+    <MaxHP>10</MaxHP>
+  </RuleSet>
+
+  <RuleSet name="world_war">
+    <MaxMoveSpeed>.1</MaxMoveSpeed>
+    <Friction>0.02</Friction>
+    <AccelPerPower>.02</AccelPerPower>
+    
+    <MaxRange>40</MaxRange>
+    <MinimumAccuracy>1</MinimumAccuracy>
+    <MaximumAccuracy>0.01</MaximumAccuracy>
+    
+    <MovementAccuracyDegrade>.2</MovementAccuracyDegrade>
+    <AimAccuracyDegrade>.02</AimAccuracyDegrade>
+    
+    <ShootAccuracyDegrade>.1</ShootAccuracyDegrade>
+    <AimImprovementPerTick>.01</AimImprovementPerTick>
+    
+    <MaxStoredBullets>5</MaxStoredBullets>
+    <ReloadPerPower>.003</ReloadPerPower>
+    
+    <MaxShield>15</MaxShield>
+    <ShieldPerPower>.001</ShieldPerPower>
+    
+    <ViewRange>50</ViewRange>
+    <SpawnDistance>150</SpawnDistance>
+    <SpawnRadius>50</SpawnRadius>
+    <ArenaRadius>250</ArenaRadius>
+    
+    <TotalBots>50</TotalBots>
+    
+    <MaxPower>12</MaxPower>
+    <MaxHP>10</MaxHP>
+  </RuleSet>
+</Rules>
