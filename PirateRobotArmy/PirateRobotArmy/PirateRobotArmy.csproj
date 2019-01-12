@@ -57,9 +57,17 @@
     <Compile Include="TeamRenderInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="GeometryLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\GeometryLib.dll</HintPath>
+    </Reference>
     <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGameResources, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\MonoGameResources.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -69,6 +77,12 @@
     <Reference Include="Utils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MonoGameResources.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="GeometryLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -76,14 +90,6 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GeometryLib\GeometryLib\GeometryLib.csproj">
-      <Project>{093808F5-C46C-4411-AD42-7B71FB8F538D}</Project>
-      <Name>GeometryLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\MonoGameResources\MonoGameResources\MonoGameResources.csproj">
-      <Project>{3b665ecb-f94a-4224-9c82-823a085321f7}</Project>
-      <Name>MonoGameResources</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PirateRobotArmyLib\PirateRobotArmyLib.csproj">
       <Project>{2f64ec72-3b43-4f81-b6ac-f34fd6ede295}</Project>
       <Name>PirateRobotArmyLib</Name>

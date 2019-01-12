@@ -7,12 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirateRobotArmy", "PirateRo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirateRobotArmyLib", "PirateRobotArmyLib\PirateRobotArmyLib.csproj", "{2F64EC72-3B43-4F81-B6AC-F34FD6EDE295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGameResources", "..\MonoGameResources\MonoGameResources\MonoGameResources.csproj", "{3B665ECB-F94A-4224-9C82-823A085321F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryLib", "..\GeometryLib\GeometryLib\GeometryLib.csproj", "{093808F5-C46C-4411-AD42-7B71FB8F538D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColisionTester", "ColisionTester\ColisionTester.csproj", "{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,28 +29,6 @@ Global
 		{2F64EC72-3B43-4F81-B6AC-F34FD6EDE295}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F64EC72-3B43-4F81-B6AC-F34FD6EDE295}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F64EC72-3B43-4F81-B6AC-F34FD6EDE295}.Release|x86.Build.0 = Release|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Debug|x86.Build.0 = Debug|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Release|x86.ActiveCfg = Release|Any CPU
-		{3B665ECB-F94A-4224-9C82-823A085321F7}.Release|x86.Build.0 = Release|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Debug|x86.Build.0 = Debug|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Release|x86.ActiveCfg = Release|Any CPU
-		{093808F5-C46C-4411-AD42-7B71FB8F538D}.Release|x86.Build.0 = Release|Any CPU
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Debug|x86.ActiveCfg = Debug|x86
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Debug|x86.Build.0 = Debug|x86
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Release|Any CPU.ActiveCfg = Release|x86
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Release|x86.ActiveCfg = Release|x86
-		{FEE869A5-A5AA-4E42-A2DC-B865B280A1A9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
