@@ -29,3 +29,10 @@
 *.exe
 *.out
 *.app
+
+**/bin/Debug/*
+**/bin/Release/*
+
+**/obj/Debug/*
+**/obj/Release/*
+DartboardEngine/Packages/**

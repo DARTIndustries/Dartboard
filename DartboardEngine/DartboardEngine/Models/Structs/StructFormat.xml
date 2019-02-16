@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<structs>
+  
+  <struct name="LEDCommand" type="LED_COMMAND">
+    <field name="CommandType" type="ECommandType" size="4"></field>
+    <field name="R" type="byte" size="1"></field>
+    <field name="G" type="byte" size="1"></field>
+    <field name="B" type="byte" size="1"></field>
+  </struct>
+  
+  <struct name="ServoCommand" type="SERVO_COMMAND">
+    <field name="CommandType" type="ECommandType" size="4"></field>
+    <field name="Position" type="double" size="8"></field>
+    <field name="ServoId" type="ushort" size="2"></field>
+  </struct>
+  
+  <struct name="StatusMessage" type="ROBOT_SYSTEM_STATUS">
+    <field name="CommandType" type="ECommandType" size="4"></field>
+    <field name="CpuPercent" type="double" size="8"></field>
+  </struct>
+  
+</structs>

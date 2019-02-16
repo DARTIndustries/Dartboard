@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DartboardEngine", "DartboardEngine\DartboardEngine.csproj", "{E24F337D-B821-4273-989E-03FAD3A38DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DartboardEngineUnitTests", "DartboardEngineUnitTests\DartboardEngineUnitTests.csproj", "{39987BD6-C02B-4063-BEA5-C805E8343BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DartboardUi", "DartboardUi\DartboardUi.csproj", "{1292253F-1A74-46C9-A62A-4337E498EB68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerEmulator", "ServerEmulator\ServerEmulator.csproj", "{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E24F337D-B821-4273-989E-03FAD3A38DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E24F337D-B821-4273-989E-03FAD3A38DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E24F337D-B821-4273-989E-03FAD3A38DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E24F337D-B821-4273-989E-03FAD3A38DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39987BD6-C02B-4063-BEA5-C805E8343BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39987BD6-C02B-4063-BEA5-C805E8343BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39987BD6-C02B-4063-BEA5-C805E8343BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39987BD6-C02B-4063-BEA5-C805E8343BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1292253F-1A74-46C9-A62A-4337E498EB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1292253F-1A74-46C9-A62A-4337E498EB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1292253F-1A74-46C9-A62A-4337E498EB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1292253F-1A74-46C9-A62A-4337E498EB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E36D83F-F3C9-4DB8-96BF-2D83CACD3F9A}
+	EndGlobalSection
+EndGlobal

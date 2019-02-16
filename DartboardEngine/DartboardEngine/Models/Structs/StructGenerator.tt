@@ -1,0 +1,55 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using DartboardEngine.Models;
+using System.Runtime.InteropServices;
+
+<#
+var xmlDoc = new XmlDocument();
+xmlDoc.Load(Host.ResolvePath("./StructFormat.xml"));
+
+var structs = xmlDoc.SelectNodes("structs/struct");
+#>
+
+namespace DartboardEngine.Models.Structs
+{
+<#
+foreach(var structNode in structs.OfType<XmlNode>())
+{
+	var name = structNode.Attributes["name"].Value;
+	var type = structNode.Attributes["type"].Value;
+	var fields = structNode.SelectNodes("field").OfType<XmlNode>().Select(x => Tuple.Create(x.Attributes["type"].Value, x.Attributes["name"].Value, int.Parse(x.Attributes["size"].Value)));
+#>
+
+    [StructLayout(LayoutKind.Explicit, Pack = 1, Size = <#=fields.Select(x=>x.Item3).Sum()#>)]
+	public struct <#=name#>
+	{
+		public <#=name#>(<#=string.Join(", ", fields.Select(x => x.Item1 + " " + x.Item2))#>)
+		{
+			<#=string.Join("\r\n\t\t\t", fields.Select(x => "this." + x.Item2 + " = " + x.Item2 + ";"))#>
+		}
+	<#
+		int rollingSize = 0;
+		foreach(var field in fields)
+		{
+		#>
+        [FieldOffset(<#=rollingSize#>)]
+		public readonly <#=field.Item1#> <#=field.Item2#>;
+		<#
+			rollingSize += field.Item3;
+		}
+	#>
+	}
+
+
+
+<#
+}
+#>
+}
