@@ -8,8 +8,8 @@ namespace DartboardEngine.Models
 {
     public enum ECommandType
     {
-        SERVO_COMMAND,
-        LED_COMMAND,
-        ROBOT_SYSTEM_STATUS
+        SERVO_COMMAND = 0,
+        LED_COMMAND = 1,
+        ROBOT_SYSTEM_STATUS = 2
     }
 }

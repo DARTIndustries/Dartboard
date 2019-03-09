@@ -49,8 +49,11 @@
     </Compile>
     <Compile Include="Models\Structs\StructMarshaller.cs" />
     <Compile Include="Models\Vector.cs" />
+    <Compile Include="Network\PacketParser.cs" />
+    <Compile Include="Network\RobotConnection.cs" />
     <Compile Include="Network\TcpInterface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\AccessQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Structs\StructFormat.xml" />

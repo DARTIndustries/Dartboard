@@ -18,11 +18,9 @@ namespace DartboardEngine.Network
 
         public event Action<byte[]> OnData;
 
-
         public TcpClient Client { get; }
         private NetworkStream ClientStream;
         private System.Net.IPEndPoint Endpoint { get; }
-
 
         private Thread ClientThread { get; }
         private CancellationTokenSource ThreadCancelToken { get; }

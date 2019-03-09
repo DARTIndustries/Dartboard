@@ -28,8 +28,15 @@ foreach(var structNode in structs.OfType<XmlNode>())
 #>
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = <#=fields.Select(x=>x.Item3).Sum()#>)]
-	public struct <#=name#>
+	public struct <#=name#> : ICommand
 	{
+		static <#=name#>()
+		{
+			Command.CommandTypes.Add(ECommandType.<#=type#>, typeof(<#=name#>));
+		}
+		
+        public ECommandType GetCommandType() => CommandType;
+
 		public <#=name#>(<#=string.Join(", ", fields.Select(x => x.Item1 + " " + x.Item2))#>)
 		{
 			<#=string.Join("\r\n\t\t\t", fields.Select(x => "this." + x.Item2 + " = " + x.Item2 + ";"))#>

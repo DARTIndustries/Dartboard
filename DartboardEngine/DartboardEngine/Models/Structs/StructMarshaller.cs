@@ -35,5 +35,20 @@ namespace DartboardEngine.Models.Structs
 
             return item;
         }
+
+        public static object Decode(Type t, byte[] arr)
+        {
+            object item = Activator.CreateInstance(t);
+
+            int size = Marshal.SizeOf(item);
+            IntPtr ptr = Marshal.AllocHGlobal(size);
+
+            Marshal.Copy(arr, 0, ptr, size);
+
+            item = Marshal.PtrToStructure(ptr, item.GetType());
+            Marshal.FreeHGlobal(ptr);
+
+            return item;
+        }
     }
 }

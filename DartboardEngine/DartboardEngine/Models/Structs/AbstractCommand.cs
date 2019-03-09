@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace DartboardEngine.Models.Structs
 {
-    public struct AbstractCommand
+    public interface ICommand
     {
-        public readonly ECommandType CommandType;
-        public AbstractCommand(ECommandType commandType)
+        ECommandType GetCommandType();
+    }
+
+    public static class Command
+    {
+        public static readonly Dictionary<ECommandType, Type> CommandTypes;
+        static Command()
         {
-            CommandType = commandType;
+            CommandTypes = new Dictionary<ECommandType, Type>();
         }
     }
 }

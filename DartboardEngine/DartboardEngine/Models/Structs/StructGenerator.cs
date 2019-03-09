@@ -7,8 +7,15 @@ namespace DartboardEngine.Models.Structs
 {
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 7)]
-    public struct LEDCommand
+    public struct LEDCommand : ICommand
     {
+        static LEDCommand()
+        {
+            Command.CommandTypes.Add(ECommandType.LED_COMMAND, typeof(LEDCommand));
+        }
+
+        public ECommandType GetCommandType() => CommandType;
+
         public LEDCommand(ECommandType CommandType, byte R, byte G, byte B)
         {
             this.CommandType = CommandType;
@@ -30,8 +37,15 @@ namespace DartboardEngine.Models.Structs
 
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 14)]
-    public struct ServoCommand
+    public struct ServoCommand : ICommand
     {
+        static ServoCommand()
+        {
+            Command.CommandTypes.Add(ECommandType.SERVO_COMMAND, typeof(ServoCommand));
+        }
+
+        public ECommandType GetCommandType() => CommandType;
+
         public ServoCommand(ECommandType CommandType, double Position, ushort ServoId)
         {
             this.CommandType = CommandType;
@@ -50,8 +64,15 @@ namespace DartboardEngine.Models.Structs
 
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 12)]
-    public struct StatusMessage
+    public struct StatusMessage : ICommand
     {
+        static StatusMessage()
+        {
+            Command.CommandTypes.Add(ECommandType.ROBOT_SYSTEM_STATUS, typeof(StatusMessage));
+        }
+
+        public ECommandType GetCommandType() => CommandType;
+
         public StatusMessage(ECommandType CommandType, double CpuPercent)
         {
             this.CommandType = CommandType;
@@ -62,4 +83,7 @@ namespace DartboardEngine.Models.Structs
         [FieldOffset(4)]
         public readonly double CpuPercent;
     }
+
+
+
 }
