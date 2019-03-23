@@ -11,8 +11,12 @@ using System.Runtime.InteropServices;
 
 namespace DartboardEngine.Network
 {
+    /// <summary>
+    /// Used to parse packets out of network activity
+    /// </summary>
     public class PacketParser
     {
+        // Stoes bytes recieved that have not yet been parsed (for incomplete messages)
         private readonly AccessQueue<byte> _pendingParse;
             
         public PacketParser()
@@ -20,35 +24,48 @@ namespace DartboardEngine.Network
             _pendingParse = new AccessQueue<byte>();
         }
 
-        public IEnumerable<ICommand> Parse(byte[] newData)
+        /// <summary>
+        /// Tries to parse data, returning a list of commands recieved
+        /// </summary>
+        public IEnumerable<IRobotCommand> Parse(byte[] newData)
         {
+            // Push data to the pending queue
             foreach (byte b in newData)
                 _pendingParse.Enqueue(b);
 
+            // We need at least 4 bits for the cmd type header
             while (_pendingParse.Count >= 4)
             {
+                // Parse the header
                 int commandId = BitConverter.ToInt32(_pendingParse.Take(4).ToArray(), 0);
                 ECommandType cmdType = (ECommandType)commandId;
                 if(!Enum.IsDefined(typeof(ECommandType), cmdType))
                 {
+                    // If we don't recognize it, die.
                     throw new UnknownCommandException(commandId);
                 }
 
+                // Get the command type
                 Type parseType = Command.CommandTypes[cmdType];
+                // find its size
                 int fullSize = Marshal.SizeOf(parseType);
 
+                // If we have that many bytes, we can parse it
                 if(_pendingParse.Count >= fullSize)
                 {
+                    // Pull off enough packets
                     var packetData = new byte[fullSize];
                     for(int i = 0; i < packetData.Length; i++)
                     {
                         packetData[i] = _pendingParse.Dequeue();
                     }
-                    yield return (ICommand)StructMarshaller.Decode(parseType, packetData);
+                    // and return it as a command
+                    yield return (IRobotCommand)StructMarshaller.Decode(parseType, packetData);
                 }
             }
         }
 
+        // Clears any pending bytes
         public void ClearBuffer()
         {
             _pendingParse.Clear();

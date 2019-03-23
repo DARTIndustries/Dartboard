@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DartboardEngine.Models.Structs
 {
-    public interface ICommand
+    public interface IRobotCommand
     {
         ECommandType GetCommandType();
     }

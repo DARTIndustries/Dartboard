@@ -10,15 +10,17 @@ namespace DartboardEngine.Network
 {
     public class RobotConnection
     {
-        public event Action<ICommand> OnCommandRecieved;
+        public event Action<IRobotCommand> OnCommandRecieved;
         public event Action<Exception> OnDisconnected;
-        public event Action OnReconnected;
+        public event Action OnConnected;
 
         public bool IsHealthy { get; private set; }
 
         public TcpInterface Interface { get; }
         private readonly ManualResetEventSlim _startupWaitSlim;
-        private Exception _startupException;
+        private Exception _storedException;
+
+        public Exception FailureReason => IsHealthy ? null : _storedException;
 
         private bool _waitingForStartup;
 
@@ -42,17 +44,19 @@ namespace DartboardEngine.Network
         public void Start()
         {
             _waitingForStartup = true;
-            _startupException = null;
+            _storedException = null;
             Interface.Start();
             _startupWaitSlim.Wait();
-            if (_startupException != null)
+            if (_storedException != null)
             {
                 IsHealthy = false;
-                throw _startupException;
+                OnDisconnected?.Invoke(_storedException);
+                return;
             }
             IsHealthy = true;
             _startupWaitSlim.Reset();
             _waitingForStartup = false;
+            OnConnected?.Invoke();
         }
 
         public void Shutdown()
@@ -60,7 +64,7 @@ namespace DartboardEngine.Network
             Interface.Shutdown();
         }
 
-        public void Send<T>(T command) where T: struct, ICommand
+        public void Send<T>(T command) where T: struct, IRobotCommand
         {
             byte[] arr = StructMarshaller.Encode(command);
             Interface.Write(arr, 0, arr.Length);
@@ -70,7 +74,7 @@ namespace DartboardEngine.Network
         {
             IsHealthy = false;
             _parser.ClearBuffer();
-            _startupException = obj;
+            _storedException = obj;
             _startupWaitSlim.Set();
         }
 
@@ -78,17 +82,18 @@ namespace DartboardEngine.Network
         {
             IsHealthy = true;
             _parser.ClearBuffer();
-            _startupException = null;
+            _storedException = null;
             _startupWaitSlim.Set();
-            OnReconnected.Invoke();
+            OnConnected.Invoke();
             if(!_waitingForStartup)
             {
-                OnReconnected?.Invoke();
+                OnConnected?.Invoke();
             }
         }
 
         private void _HandleDataException(Exception obj)
         {
+            _storedException = obj;
             IsHealthy = false;
             _parser.ClearBuffer();
             OnDisconnected.Invoke(obj);

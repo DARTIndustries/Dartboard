@@ -7,7 +7,7 @@ namespace DartboardEngine.Models.Structs
 {
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 7)]
-    public struct LEDCommand : ICommand
+    public struct LEDCommand : IRobotCommand
     {
         static LEDCommand()
         {
@@ -37,7 +37,7 @@ namespace DartboardEngine.Models.Structs
 
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 14)]
-    public struct ServoCommand : ICommand
+    public struct ServoCommand : IRobotCommand
     {
         static ServoCommand()
         {
@@ -64,7 +64,7 @@ namespace DartboardEngine.Models.Structs
 
 
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 12)]
-    public struct StatusMessage : ICommand
+    public struct StatusMessage : IRobotCommand
     {
         static StatusMessage()
         {

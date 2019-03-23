@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:DartboardUi"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <StackPanel x:Name="Stack">
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="16"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <local:StatusIndicatorRow Grid.Row="1" Grid.Column="0"></local:StatusIndicatorRow>
+    </Grid>
 </Window>

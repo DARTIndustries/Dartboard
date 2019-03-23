@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DartboardUi", "DartboardUi\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerEmulator", "ServerEmulator\ServerEmulator.csproj", "{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerLib", "ControllerLib\ControllerLib.csproj", "{12F51B46-54DB-4ABD-A97A-45AF25CF7BE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E7BF336-6FEA-48CD-8F8B-AC7D5FE9E5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F51B46-54DB-4ABD-A97A-45AF25CF7BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F51B46-54DB-4ABD-A97A-45AF25CF7BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F51B46-54DB-4ABD-A97A-45AF25CF7BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F51B46-54DB-4ABD-A97A-45AF25CF7BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

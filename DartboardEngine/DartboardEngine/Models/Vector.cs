@@ -6,6 +6,8 @@ namespace DartboardEngine
     [StructLayout(LayoutKind.Explicit, Pack = 1, Size = 12)]
     public struct Vector
     {
+        public static Vector Zero { get; } = new Vector(0, 0, 0);
+
         [FieldOffset(0)]
         public readonly float X;
 
@@ -33,6 +35,9 @@ namespace DartboardEngine
         {
             return new Vector(x ?? X, y ?? Y, z ?? Z);
         }
+
+        public float MagnitudeSquared() => X * X + Y * Y + Z * Z;
+        public float Magnitude() => (float)Math.Sqrt(MagnitudeSquared());
 
         public override string ToString()
         {

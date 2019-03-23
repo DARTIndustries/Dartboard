@@ -22,60 +22,11 @@ namespace DartboardUi
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static MainWindow Instance {get; private set; }
-        public static TcpInterface Interface { get; private set; }
-
         public MainWindow()
         {
-            Instance = this;
+            ConnectionControl.Setup(new System.Net.IPEndPoint(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 8400));
             InitializeComponent();
-            Interface = new TcpInterface(new System.Net.IPEndPoint(new System.Net.IPAddress(new byte[] { 127, 0, 0, 1 }), 8400));
-            Interface.Start();
-
-            Interface.OnData += OnData;
-            Interface.NetworkException += NetException;
-            Interface.Connected += Connected;
-            Interface.ConnectionException += ConnectException;
-
-            this.Closing += MainWindow_Closing;
-        }
-
-        private void ConnectException(Exception obj)
-        {
-            PushMessage("Connect EX: " + obj.ToString());
-        }
-
-        private void Connected()
-        {
-            PushMessage("Connected!");
-        }
-
-        private void NetException(Exception obj)
-        {
-            PushMessage("Net EX: " + obj.ToString());
-        }
-
-        private void OnData(byte[] obj)
-        {
-            StatusMessage status = StructMarshaller.Decode<StatusMessage>(obj);
-            PushMessage("Got Status - CPU: " + status.CpuPercent);
-        }
-
-        private void PushMessage(string msg)
-        {
-            Dispatcher.Invoke(() =>
-            {
-                Stack.Children.Add(new Label() { Content = msg });
-                if(Stack.Children.Count > 10)
-                {
-                    Stack.Children.RemoveAt(0);
-                }
-            });
-        }
-
-        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Interface.Shutdown();
+            Closed += (o, e) => ConnectionControl.Shutdown();
         }
     }
 }

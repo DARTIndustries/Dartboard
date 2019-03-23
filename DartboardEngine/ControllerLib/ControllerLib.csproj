@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E24F337D-B821-4273-989E-03FAD3A38DDA}</ProjectGuid>
+    <ProjectGuid>{E4445F24-7965-44D1-A31D-2A1F6F149EBC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DartboardEngine</RootNamespace>
-    <AssemblyName>DartboardEngine</AssemblyName>
+    <RootNamespace>ControllerLib</RootNamespace>
+    <AssemblyName>ControllerLib</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,48 +39,19 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input\XInputController.cs" />
-    <Compile Include="Models\ECommandType.cs" />
-    <Compile Include="Models\Structs\AbstractCommand.cs" />
-    <Compile Include="Models\Structs\StructGenerator.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StructGenerator.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Structs\StructMarshaller.cs" />
-    <Compile Include="Models\Vector.cs" />
-    <Compile Include="Network\PacketParser.cs" />
-    <Compile Include="Network\RobotConnection.cs" />
-    <Compile Include="Network\TcpInterface.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\AccessQueue.cs" />
-    <Compile Include="Utility\Cached.cs" />
-    <Compile Include="Utility\TimerCached.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\Structs\StructFormat.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\Structs\StructGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>StructGenerator.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
